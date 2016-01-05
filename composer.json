@@ -1,0 +1,21 @@
+{
+    "name": "talesoft/tale-jade-live-compiler",
+    "type": "project",
+    "description": "An app that compiles Tale Jade to XML/HTML in real-time",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Torben Koehn",
+            "email": "tk@talesoft.io"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "talesoft/tale-jade": ">=1.3.1",
+        "erusev/parsedown": "*",
+        "coffeescript/coffeescript": "*",
+        "leafo/lessphp": "*",
+        "leafo/scssphp": "*"
+    }
+}
