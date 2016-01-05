@@ -28,7 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $result = "\n".get_class($e)."\n\n".$e->getMessage();
     }
 
-    exit(json_encode($result));
+    header('Content-Type: application/json; encoding=utf-8');
+    echo json_encode($result);
+    exit;
 }
 
 
@@ -48,7 +50,7 @@ $renderer = new Renderer([
     'paths' => [__DIR__.'/views'],
     'pretty' => true,
     'adapterOptions' => [
-        'lifeTime' => 0
+        'lifeTime' => 3600 * 24
     ]
 ]);
 

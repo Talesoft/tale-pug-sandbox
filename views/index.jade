@@ -11,6 +11,7 @@ doctype html
 html(lang='en')
     head
         meta(charset='utf-8')
+        meta(http-equiv='Content-Type', content='text/html; encoding=utf-8')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         meta(name='viewport', content='width=device-width, initial-scale=1')
 
@@ -23,7 +24,7 @@ html(lang='en')
 
         link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css')
         link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css')
-        link(rel='stylesheet', href='styles/common.less')
+        include styles/common.less
 
     body
 
@@ -61,17 +62,45 @@ html(lang='en')
                         .panel-heading
                             h2.panel-title Examples
                         .panel-body
-                            +example-link('index', 'Index')
-                            +example-link('classes', 'Classes')
-                            +example-link('ids', 'IDs')
-                            +example-link('nesting', 'Nesting')
-                            +example-link('block-expansion', 'Block Expansion')
-                            +example-link('variables', 'Variables')
-                            +example-link('mixins', 'Mixins')
-                            +example-link('html-5', 'HTML5')
-                            +example-link('xml', 'XML')
-                            +example-link('attributes', 'Attributes')
-                            +example-link('blocks', 'Blocks')
+                            .example-links
+                                +example-link('index', 'Index')
+                                +example-link('classes', 'Classes')
+                                +example-link('ids', 'IDs')
+                                +example-link('nesting', 'Nesting')
+                                +example-link('block-expansion', 'Block Expansion')
+                                +example-link('variables', 'Variables')
+                                +example-link('mixins', 'Mixins')
+                                +example-link('html-5', 'HTML5')
+                                +example-link('xml', 'XML')
+                                +example-link('attributes', 'Attributes')
+                                +example-link('blocks', 'Blocks')
+                                +example-link('expressions', 'Expressions')
+                                +example-link('escaping', 'Escaping')
+                                +example-link('cross-assignments', 'Cross Assignments')
+                                +example-link('comments', 'Comments')
+                                +example-link('code', 'Code')
+                                +example-link('text', 'Text')
+                                +example-link('markup', 'Markup')
+                                +example-link('inheritance', 'Inheritance')
+                                +example-link('includes', 'Includes')
+                                +example-link('conditionals', 'Conditionals')
+                                +example-link('loops', 'Loops')
+                                +example-link('interpolation', 'Interpolation')
+                                +example-link('filters', 'Filters')
+                                +example-link('mixin-blocks', 'Mixin Blocks')
+                                +example-link('variadics', 'Variadics')
+                                +example-link('named-mixin-parameters', 'Named Mixin Parameters')
+                                +example-link('attribute-stacking', 'Attribute Stacking')
+                                +example-link('filter-maps', 'Filter Maps')
+                                +example-link('variable-access', 'Variable Access')
+                                +example-link('coffeescript', 'CoffeeScript')
+                                +example-link('less', 'Less')
+                                +example-link('sass', 'Sass')
+                                +example-link('stylus', 'Stylus')
+                                +example-link('markdown', 'Markdown')
+                                +example-link('forwarding', 'Forwarding')
+                                +example-link('indentation', 'Indentation')
+
                 .col-md-9
 
                     .panel.panel-info
@@ -85,6 +114,10 @@ html(lang='en')
                             h2.panel-title HTML/XML/PHTML/PXML
                         .panel-body
                             .editor.editor-php#phpEditor
+
+            .text-center
+                .well.well-sm
+                    | &copy; 2016 Torben Köhn <#[a(href='mailto:Torben Koehn <tk@talesoft.io>') tk@talesoft.io]>
 
         script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js')
         script(src='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js')

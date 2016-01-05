@@ -37,7 +37,7 @@
             $.post 'index.php', args, (result) ->
 
                 phpEditorEl.classList.remove 'compiling'
-                phpEditor.setValue JSON.parse result;
+                phpEditor.setValue result;
                 phpEditor.navigateFileStart();
 
         iv = null

@@ -1,0 +1,17 @@
+
+:coffee
+
+    class Point
+
+        x: 0
+        y: 0
+
+        constructor: (x, y) ->
+
+            @x = x
+            @y = y
+
+        add: (point) ->
+
+            new Point @x + point.x, @y + point.y
+

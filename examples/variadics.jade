@@ -1,0 +1,8 @@
+
+mixin post-list(...posts)
+    each $post in $posts
+        header= $post->title
+        article= $post->content
+
+
++post-list($post1, $post2, $post3, $post4)

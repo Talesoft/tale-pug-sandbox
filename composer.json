@@ -2,7 +2,7 @@
     "name": "talesoft/tale-jade-live-compiler",
     "type": "project",
     "description": "An app that compiles Tale Jade to XML/HTML in real-time",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "license": "MIT",
     "authors": [
         {
@@ -16,6 +16,7 @@
         "erusev/parsedown": "*",
         "coffeescript/coffeescript": "*",
         "leafo/lessphp": "*",
-        "leafo/scssphp": "*"
+        "leafo/scssphp": "*",
+        "neemzy/stylus": "dev-master"
     }
 }

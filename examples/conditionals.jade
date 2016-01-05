@@ -1,0 +1,14 @@
+if $something
+    p Do something
+else
+    p Do something else
+
+unless $error
+    p.success Success!
+
+case $someState
+    when 'state-1': p Do anything
+    when 'state-2'
+        p Do some larger thing
+    default
+        p Do the default thing

@@ -7,20 +7,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/erusev/parsedown" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/leafo/lessphp" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/leafo/scssphp" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/neemzy/stylus" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/talesoft/tale-jade" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library name="PHARS">
-        <CLASSES>
-          <root url="phar://$MODULE_DIR$/composer.phar/" />
-        </CLASSES>
-        <SOURCES>
-          <root url="phar://$MODULE_DIR$/composer.phar/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
     <orderEntry type="module-library">
       <library name="PHP">
         <CLASSES>
@@ -29,6 +20,7 @@
           <root url="file://$MODULE_DIR$/vendor/erusev/parsedown" />
           <root url="file://$MODULE_DIR$/vendor/leafo/lessphp" />
           <root url="file://$MODULE_DIR$/vendor/leafo/scssphp" />
+          <root url="file://$MODULE_DIR$/vendor/neemzy/stylus" />
           <root url="file://$MODULE_DIR$/vendor/talesoft/tale-jade" />
         </CLASSES>
         <SOURCES>
@@ -37,6 +29,7 @@
           <root url="file://$MODULE_DIR$/vendor/erusev/parsedown" />
           <root url="file://$MODULE_DIR$/vendor/leafo/lessphp" />
           <root url="file://$MODULE_DIR$/vendor/leafo/scssphp" />
+          <root url="file://$MODULE_DIR$/vendor/neemzy/stylus" />
           <root url="file://$MODULE_DIR$/vendor/talesoft/tale-jade" />
         </SOURCES>
       </library>
@@ -45,5 +38,9 @@
     <orderEntry type="library" name="respond" level="application" />
     <orderEntry type="library" name="ace" level="application" />
     <orderEntry type="library" name="theme-dreamweaver" level="application" />
+    <orderEntry type="library" name="ace" level="application" />
+    <orderEntry type="library" name="theme-dreamweaver" level="application" />
+    <orderEntry type="library" name="html5shiv" level="application" />
+    <orderEntry type="library" name="respond" level="application" />
   </component>
 </module>
