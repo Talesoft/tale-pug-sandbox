@@ -48,7 +48,7 @@ if (!file_exists(EXAMPLE_PATH."/$example.jade"))
 
 $renderer = new Renderer([
     'paths' => [__DIR__.'/views'],
-    'pretty' => true,
+    'pretty' => false,
     'adapterOptions' => [
         'lifeTime' => 3600 * 24
     ]
