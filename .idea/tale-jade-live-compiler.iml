@@ -20,7 +20,6 @@
           <root url="file://$MODULE_DIR$/vendor/erusev/parsedown" />
           <root url="file://$MODULE_DIR$/vendor/leafo/lessphp" />
           <root url="file://$MODULE_DIR$/vendor/leafo/scssphp" />
-          <root url="file://$MODULE_DIR$/vendor/neemzy/stylus" />
           <root url="file://$MODULE_DIR$/vendor/talesoft/tale-jade" />
         </CLASSES>
         <SOURCES>
@@ -29,7 +28,6 @@
           <root url="file://$MODULE_DIR$/vendor/erusev/parsedown" />
           <root url="file://$MODULE_DIR$/vendor/leafo/lessphp" />
           <root url="file://$MODULE_DIR$/vendor/leafo/scssphp" />
-          <root url="file://$MODULE_DIR$/vendor/neemzy/stylus" />
           <root url="file://$MODULE_DIR$/vendor/talesoft/tale-jade" />
         </SOURCES>
       </library>
@@ -42,5 +40,15 @@
     <orderEntry type="library" name="theme-dreamweaver" level="application" />
     <orderEntry type="library" name="html5shiv" level="application" />
     <orderEntry type="library" name="respond" level="application" />
+    <orderEntry type="module-library">
+      <library name="PHARS">
+        <CLASSES>
+          <root url="phar://$MODULE_DIR$/composer.phar/" />
+        </CLASSES>
+        <SOURCES>
+          <root url="phar://$MODULE_DIR$/composer.phar/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

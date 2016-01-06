@@ -6,9 +6,11 @@ else
 unless $error
     p.success Success!
 
-case $someState
-    when 'state-1': p Do anything
-    when 'state-2'
-        p Do some larger thing
-    default
-        p Do the default thing
+if 1
+    p It's one!
+else if 2
+    p It's two!
+elseif 3
+    p It's three!
+else
+    p It's anything else!
