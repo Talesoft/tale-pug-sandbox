@@ -3,7 +3,7 @@ mixin example-link(name, label)
     a.label(
         href='index.php?example=',
         href=$name,
-        class='label-'.($currentExample === $name ? 'primary' : 'default')
+        class='label-'.($example === $name ? 'primary' : 'default')
     )= $label
 
 
@@ -23,15 +23,16 @@ html(lang='en')
         <![endif]-->
 
         link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css')
-        link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css')
-        include styles/common.less
+        link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css')
+        link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Open+Sans:400,700')
+        include ../styles/common.less
 
     body
 
         .container
 
             .page-header
-                h1.clearfix
+                h2.clearfix
                     | Tale Jade Sandbox
                     small.pull-right
                         a(href='http://jade.talesoft.io', title='The Tale Jade ReadMe File')
@@ -42,25 +43,11 @@ html(lang='en')
                             i.fa.fa-github
                             | GitHub Repository
 
-
             .row
                 .col-md-3
                     .panel.panel-default
                         .panel-heading
-                            h2.panel-title Options
-                        .panel-body
-                            .container
-                                .checkbox
-                                    label
-                                        input#prettyCheckbox(type='checkbox', checked)
-                                        | Format HTML (Pretty Mode)
-                                .checkbox
-                                    label
-                                        input#standAloneCheckbox(type='checkbox')
-                                        | Compile for Stand-Alone use
-                    .panel.panel-default
-                        .panel-heading
-                            h2.panel-title Examples
+                            h3.panel-title Examples
                         .panel-body
                             .example-links
                                 +example-link('index', 'Index')
@@ -101,18 +88,47 @@ html(lang='en')
                                 +example-link('markdown', 'Markdown')
                                 +example-link('forwarding', 'Forwarding')
                                 +example-link('indentation', 'Indentation')
+                    .panel.panel-default
+                        .panel-heading
+                            h3.panel-title Options
+                        .panel-body
+                            a.btn.btn-primary.btn-block#saveButton(href='#')
+                                i.fa.fa-save
+                                | Save Jade
+                            hr
+                            form.form-horizontal#optionsForm(action='index.php', method='post')
+
+                                strong Mode
+                                br
+                                label.radio-inline
+                                    input(type='radio', name='mode', value='compile', checked) Compile
+                                label.radio-inline
+                                    input(type='radio', name='mode', value='parse') Parse
+                                label.radio-inline
+                                    input(type='radio', name='mode', value='lex') Lex
+                                hr
+
+                                strong Compile Options
+                                .checkbox
+                                    label
+                                        input(type='checkbox', name='pretty', value='true', checked)
+                                        | Format HTML (Pretty Mode)
+                                .checkbox
+                                    label
+                                        input(type='checkbox', name='standAlone', value='true')
+                                        | Compile for Stand-Alone use
 
                 .col-md-9
 
                     .panel.panel-info
                         .panel-heading
-                            h2.panel-title Jade
+                            h3.panel-title Jade
                         .panel-body
                             .editor.editor-jade#jadeEditor
 
                     .panel.panel-primary
                         .panel-heading
-                            h2.panel-title HTML/XML/PHTML/PXML
+                            h3.panel-title HTML/XML/PHTML/PXML
                         .panel-body
                             .editor.editor-php#phpEditor
 
@@ -121,7 +137,6 @@ html(lang='en')
                     | &copy; 2016 Torben Köhn <#[a(href='mailto:Torben Koehn <tk@talesoft.io>') tk@talesoft.io]>
 
         script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js')
-        script(src='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js')
         script(src='//cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.min.js')
         script(src='//cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/theme-dreamweaver.js')
         include ../scripts/common.coffee

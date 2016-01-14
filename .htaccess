@@ -1,0 +1,7 @@
+
+Order deny,allow
+Allow from all
+
+RewriteEngine On
+RewriteRule ^id-([a-z0-9]+)\.html$ index.php?id=$1 [QSA,L,NC]
+RewriteRule ^([a-z0-9\-]+)\.html$ index.php?example=$1 [QSA,L,NC]

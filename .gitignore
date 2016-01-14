@@ -1,7 +1,10 @@
 
 .DS_Store
 Thumbs.db
-/cache
+/cache/*
+!/cache/.gitignore
+/saves/*
+!/saves/.gitignore
 /vendor
 /composer.lock
 /composer.phar

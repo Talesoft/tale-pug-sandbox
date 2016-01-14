@@ -2,8 +2,8 @@
 
     $ ->
 
-        ace.config.set "packaged", true
-        ace.config.set "basePath", 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0'
+        ace.config.set 'packaged', true
+        ace.config.set 'basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0'
 
         jadeEditor = ace.edit 'jadeEditor'
         phpEditor = ace.edit 'phpEditor'
@@ -14,7 +14,7 @@
         jadeEditor.getSession().setUseWorker false
         jadeEditor.getSession().setUseSoftTabs true
         jadeEditor.$blockScrolling = Infinity
-        jadeEditor.setValue `!{$exampleCode}`
+        jadeEditor.setValue `!{json_encode($jade)}`
         jadeEditor.navigateFileStart()
         phpEditor.setTheme 'ace/theme/xcode'
         phpEditor.getSession().setMode 'ace/mode/php'
@@ -23,24 +23,40 @@
         phpEditor.$blockScrolling = Infinity
         phpEditor.setReadOnly true
 
-        prettyCheckbox = document.getElementById 'prettyCheckbox'
-        standAloneCheckbox = document.getElementById 'standAloneCheckbox'
+        optionsForm = document.getElementById 'optionsForm'
+        saveButton = document.getElementById 'saveButton'
+
+        iv = null
+
+
+        save = ->
+
+            args =
+                jade: jadeEditor.getValue()
+                mode: 'save'
+
+            $.post 'index.php', args, (result) ->
+
+                unless result.success
+
+                    window.alert 'Failed saving Jade. CTRL+C the Jade code and reload the page.'
+                    return
+
+                window.location.href = 'id-' + result.id + '.html'
 
         compile = ->
 
             phpEditorEl.classList.add 'compiling'
-            args =
-                jade: jadeEditor.getValue()
-                pretty: if prettyCheckbox.checked then 'true' else 'false'
-                standAlone: if standAloneCheckbox.checked then 'true' else 'false'
+            args = $(optionsForm).serialize() + '&jade=' + jadeEditor.getValue()
 
             $.post 'index.php', args, (result) ->
 
+                resultText = if result.success then result.output else result.message
+
                 phpEditorEl.classList.remove 'compiling'
-                phpEditor.setValue result;
+                phpEditor.setValue resultText;
                 phpEditor.navigateFileStart();
 
-        iv = null
         changed = ->
 
             if iv
@@ -50,6 +66,11 @@
             iv = window.setTimeout compile, 50
 
         jadeEditor.getSession().on 'change', changed
-        $([prettyCheckbox, standAloneCheckbox]).change changed
+        $('input', optionsForm).change compile
+        $(saveButton).click (e) ->
+
+            e.preventDefault()
+            save()
+
         compile();
 ) jQuery
