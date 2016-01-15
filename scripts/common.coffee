@@ -47,7 +47,7 @@
         compile = ->
 
             phpEditorEl.classList.add 'compiling'
-            args = $(optionsForm).serialize() + '&jade=' + jadeEditor.getValue()
+            args = $(optionsForm).serialize() + '&jade=' + encodeURIComponent(jadeEditor.getValue())
 
             $.post 'index.php', args, (result) ->
 
