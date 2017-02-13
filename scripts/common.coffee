@@ -1,4 +1,4 @@
-(($) ->
+do ($ = jQuery) ->
 
     $ ->
 
@@ -7,7 +7,7 @@
 
         jadeEditor = ace.edit 'jadeEditor'
         phpEditor = ace.edit 'phpEditor'
-        phpEditorEl = document.getElementById 'phpEditor'
+        phpEditorEl = $('#phpEditor')[0]
 
         jadeEditor.setTheme 'ace/theme/xcode'
         jadeEditor.getSession().setMode 'ace/mode/jade'
@@ -23,8 +23,8 @@
         phpEditor.$blockScrolling = Infinity
         phpEditor.setReadOnly true
 
-        optionsForm = document.getElementById 'optionsForm'
-        saveButton = document.getElementById 'saveButton'
+        optionsForm = $('#optionsForm')[0]
+        saveButton = $('#saveButton')[0]
 
         iv = null
 
@@ -39,10 +39,10 @@
 
                 unless result.success
 
-                    window.alert 'Failed saving Jade. CTRL+C the Jade code and reload the page.'
+                    alert 'Failed saving Jade. CTRL+C the Jade code and reload the page.'
                     return
 
-                window.location.href = 'id-' + result.id + '.html'
+                location.href = 'id-' + result.id + '.html'
 
         compile = ->
 
@@ -60,10 +60,10 @@
         changed = ->
 
             if iv
-                window.clearTimeout iv
+                clearTimeout iv
 
             phpEditorEl.classList.add 'compiling'
-            iv = window.setTimeout compile, 50
+            iv = setTimeout compile, 50
 
         jadeEditor.getSession().on 'change', changed
         $('input', optionsForm).change compile
@@ -73,4 +73,3 @@
             save()
 
         compile();
-) jQuery
