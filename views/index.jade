@@ -15,7 +15,7 @@ html(lang='en')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         meta(name='viewport', content='width=device-width, initial-scale=1')
 
-        title Tale Jade Live Compiler
+        title Tale Pug Sandbox | Talesoft
 
         <!--[if lt IE 9]>
             script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
@@ -33,15 +33,15 @@ html(lang='en')
 
             .page-header
                 h2.clearfix
-                    | Tale Jade Sandbox
+                    | Tale Pug Sandbox
                     small.pull-right
-                        a(href='http://jade.talesoft.io', title='The Tale Jade ReadMe File')
+                        a(href='http://pug.talesoft.codes', title='The Tale Pug ReadMe File')
                             i.fa.fa-home
-                            | About Tale Jade
+                            |  About Tale Pug
                         | &nbsp;|&nbsp;
-                        a(href='https://github.com/Talesoft/tale-jade')
+                        a(href='https://github.com/Talesoft/tale-pug')
                             i.fa.fa-github
-                            | GitHub Repository
+                            |  GitHub Repository
 
             .row
                 .col-md-3
@@ -95,7 +95,7 @@ html(lang='en')
                         .panel-body
                             a.btn.btn-primary.btn-block#saveButton(href='#')
                                 i.fa.fa-save
-                                | Save Jade
+                                |  Save Pug
                             hr
                             form.form-horizontal#optionsForm(action='index.php', method='post')
 
@@ -116,26 +116,26 @@ html(lang='en')
                                         | Format HTML (Pretty Mode)
                                 .checkbox
                                     label
-                                        input(type='checkbox', name='standAlone', value='true')
+                                        input(type='checkbox', name='stand_alone', value='true')
                                         | Compile for Stand-Alone use
 
                 .col-md-9
 
                     .panel.panel-info
                         .panel-heading
-                            h3.panel-title Jade
+                            h3.panel-title Pug
                         .panel-body
-                            .editor.editor-jade#jadeEditor
+                            .editor.editor-pug#pugEditor
 
                     .panel.panel-primary
                         .panel-heading
-                            h3.panel-title HTML/XML/PHTML/PXML
+                            h3.panel-title Result
                         .panel-body
                             .editor.editor-php#phpEditor
 
             .text-center
                 .well.well-sm
-                    | &copy; 2016 Torben Köhn <#[a(href='mailto:Torben Koehn <tk@talesoft.io>') tk@talesoft.io]>
+                    | &copy; 2016 Torben Köhn <#[a(href='mailto:Torben Koehn <torben@talesoft.codes>') torben@talesoft.codes]>
 
         script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js')
         script(src='//cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.min.js')
