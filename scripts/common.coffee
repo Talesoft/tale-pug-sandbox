@@ -42,7 +42,7 @@ do ($ = jQuery) ->
                     alert 'Failed saving Pug. CTRL+C the Pug code and reload the page.'
                     return
 
-                location.href = 'id-' + result.id + '.html'
+                location.href = '?id=' + result.id
 
         compile = ->
 

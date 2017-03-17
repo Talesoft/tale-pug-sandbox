@@ -1,7 +1,7 @@
 
 mixin example-link(name, label)
     a.label(
-        href='index.php?example=',
+        href='?example=',
         href=$name,
         class='label-'.($example === $name ? 'primary' : 'default')
     )= $label
