@@ -5,11 +5,11 @@ use Tale\Pug\Parser;
 use Tale\Pug\Renderer;
 use Tale\Pug\Compiler;
 
-include 'vendor/autoload.php';
+include dirname(__DIR__).'/vendor/autoload.php';
 
-define('VIEW_PATH', __DIR__.'/views');
-define('EXAMPLE_PATH', __DIR__.'/examples');
-define('SAVE_PATH', __DIR__.'/saves');
+define('VIEW_PATH', dirname(__DIR__).'/views');
+define('EXAMPLE_PATH', dirname(__DIR__).'/examples');
+define('SAVE_PATH', dirname(__DIR__).'/saves');
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -126,11 +126,10 @@ if ($id && preg_match('/^[a-z0-9]+$/i', $id)) {
 
 
 $renderer = new Renderer([
-    'paths' => [__DIR__.'/views'],
+    'paths' => [VIEW_PATH],
+    'cache_path' => dirname(__DIR__).'/cache',
     'pretty' => false,
-    'adapterOptions' => [
-        'lifeTime' => 3600 * 24
-    ]
+    'ttl' => 3600 * 24
 ]);
 
 
